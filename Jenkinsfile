@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'make publish'
+                echo 'make publish lel'
             }
         }
     }
