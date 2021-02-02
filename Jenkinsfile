@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'make dedpussbfrgtgfgtgtggfdfgtglissh leswsl'
+                echo 'make dedpussgtgbfrgtgfgtgtggfdfgtglissh leswsl'
             }
         }
     }
