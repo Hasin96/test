@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'make pussblish lel'
+                echo 'make pussblissh lel'
             }
         }
     }
