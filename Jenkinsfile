@@ -11,10 +11,5 @@ pipeline {
                 echo 'make check'
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'make dedpfgussgtglolgfgbfrgtgfgtgtggfdfgtglissh leswsl'
-            }
-        }
     }
 }
