@@ -1,15 +1,36 @@
-pipeline { 
-    agent any 
+properties([pipelineTriggers([githubPush()])])
+ 
+pipeline {
+    /* specify nodes for executing */
+    agent {
+        label 'github-ci'
+    }
+ 
     stages {
-        stage('Build') { 
-            steps { 
-                echo 'makde' 
+        /* checkout repo */
+        stage('Checkout SCM') {
+            steps {
+                checkout([
+                 $class: 'GitSCM',
+                 branches: [[name: 'main']],
+                 userRemoteConfigs: [[
+                    url: 'git@github.com:Hasin96/test.git',
+                    credentialsId: '',
+                 ]]
+                ])
             }
         }
-        stage('Test'){
+         stage('Do the deployment') {
             steps {
-                echo 'make check'
+                echo ">> Run deploy applications "
             }
         }
     }
+ 
+    /* Cleanup workspace */
+    post {
+       always {
+           deleteDir()
+       }
+   }
 }
