@@ -1,9 +1,12 @@
-properties([pipelineTriggers([githubPush()])])
+
  
 pipeline {
     /* specify nodes for executing */
     agent {
-        label 'github-ci'
+        label any
+    }
+    triggers {
+        githubPush()
     }
  
     stages {
