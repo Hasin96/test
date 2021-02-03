@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Test'){
             steps {
-                echo 'make check'
+                echo 'make check s'
             }
         }
     }
